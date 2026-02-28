@@ -1,0 +1,9 @@
+---
+foo: bar
+project_id: "{{ project_id }}"
+project_name: "{{ project_name }}"
+project_desc: "{{ project_desc }}"
+author_name: "{{ author_name }}"
+author_email: "{{ author_email }}"
+github_id: "{{ github_id }}"
+github_repo: "{{ github_repo }}"
