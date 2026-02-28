@@ -13,7 +13,7 @@ It provides the following components:
 
 | Component | Description |
 |-----------|-------------|
-| code-generator | Generate a generator project to generate some code. |
+| code-generator | Generate a generator project to generate more code. |
 
 Usage
 -----
@@ -22,7 +22,7 @@ Generate code generator project:
 
     make generate-code-generator
 
-Both components will prompt you the following inputs:
+This component will prompt you the following inputs:
 
 | Prompt | Description |
 |--------|-------------|

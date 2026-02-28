@@ -12,13 +12,22 @@
 Usage
 -----
 
-Use the role in your playbook:
+Generate code generator project:
 
-    - hosts: all
+    make generate-code-generator
 
-      vars:
-        ans_reverse: true
-        ans_transformation: 'upper'
+This component will prompt you the following inputs:
 
-      roles:
-        - {{github_id}}.{{project_id}}
+| Prompt | Description |
+|--------|-------------|
+| Project ID | Used for package names and project repo name. |
+| Project Name | Used in documentation or comments. |
+| Project Description | Used in documentation or comments. |
+| Author Name | The name of the project author. |
+| Author Email | The email of the project author. |
+| Author URL | The author's website URL. |
+| GitHub ID | The GitHub ID of the project repo. |
+
+Move to the generated project directory:
+
+    cd stage/<component>/
