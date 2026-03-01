@@ -20,6 +20,7 @@ test-code-generator:
 	    --project_id "code-generator" \
 		--project_name "Code Generator" \
 		--project_desc "Simple Code Generator" \
+		--component_name "code-generator" \
 		--author_name "Pakkun" \
 		--author_email "blah+pakkun@cliffano.com" \
 		--author_url "https://github.com/pakkunbot" \
