@@ -9,7 +9,7 @@ Generator-Generator
 
 The Generator that generates generators using [Plop](https://plopjs.com/).
 
-It provides the following components:
+It provides the following component:
 
 | Component | Description |
 |-----------|-------------|
