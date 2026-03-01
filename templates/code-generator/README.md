@@ -13,7 +13,7 @@ It provides the following components:
 
 | Component | Description |
 |-----------|-------------|
-| <some_component> | <some_component_desc> |
+| {{ component_name }} | <some_component_desc> |
 
 Usage
 -----
@@ -36,7 +36,7 @@ This component will prompt you the following inputs:
 
 Move to the generated project directory:
 
-    cd stage/<component>/
+    cd stage/{{ component_name }}/
 
 Configuration
 -------------

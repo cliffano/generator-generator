@@ -16,56 +16,56 @@ export default function (plop) {
     return text.toUpperCase();
   });
 
-  plop.setGenerator('{{ project_id }}', {
-      description: '{{ titlecase(project_id) }} Plop',
-      prompts: [
-        {
-          type: 'input',
-          name: 'project_id',
-          message: 'Project ID'
-        },
-        {
-          type: 'input',
-          name: 'project_name',
-          message: 'Project Name'
-        },
-        {
-          type: 'input',
-          name: 'project_desc',
-          message: 'Project Description '
-        },
-        {
-          type: 'input',
-          name: 'author_name',
-          message: 'Author Name'
-        },
-        {
-          type: 'input',
-          name: 'author_email',
-          message: 'Author Email'
-        },
-        {
-          type: 'input',
-          name: 'github_id',
-          message: 'GitHub ID'
-        },
-        {
-          type: 'input',
-          name: 'github_repo',
-          message: 'GitHub Repository'
-        }
-      ],
-      actions: [
-        {
-          type: 'addMany',
-          destination: 'stage',
-          templateFiles: [
-            'templates/some-component/.*/*/*/*',
-            'templates/some-component/.*/*/*',
-            'templates/some-component/**/.*',
-            'templates/some-component/**/*'
-          ]
-        }
-      ]
+  plop.setGenerator('{{ component_name }}', {
+    description: '{{ titlecase(component_name) }} Plop',
+    prompts: [
+      {
+        type: 'input',
+        name: 'project_id',
+        message: 'Project ID'
+      },
+      {
+        type: 'input',
+        name: 'project_name',
+        message: 'Project Name'
+      },
+      {
+        type: 'input',
+        name: 'project_desc',
+        message: 'Project Description '
+      },
+      {
+        type: 'input',
+        name: 'author_name',
+        message: 'Author Name'
+      },
+      {
+        type: 'input',
+        name: 'author_email',
+        message: 'Author Email'
+      },
+      {
+        type: 'input',
+        name: 'github_id',
+        message: 'GitHub ID'
+      },
+      {
+        type: 'input',
+        name: 'github_repo',
+        message: 'GitHub Repository'
+      }
+    ],
+    actions: [
+      {
+        type: 'addMany',
+        destination: 'stage',
+        templateFiles: [
+          'templates/<some_component>/.*/*/*/*',
+          'templates/<some_component>/.*/*/*',
+          'templates/<some_component>/**/.*',
+          'templates/<some_component>/**/*'
+        ]
+      }
+    ]
   });
 };

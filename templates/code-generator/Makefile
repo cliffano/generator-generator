@@ -1,10 +1,10 @@
-ci: clean stage deps test-{{ project_id }}
+ci: clean stage deps test-{{ component_name }}
 
 clean:
 	rm -rf stage/
 
-clean-{{ project_id }}:
-	rm -rf stage/{{ project_id }}/
+clean-{{ component_name }}:
+	rm -rf stage/{{ component_name }}/
 
 stage:
 	mkdir -p stage/
@@ -12,11 +12,11 @@ stage:
 deps:
 	npm install .
 
-generate-{{ project_id }}: clean-{{ project_id }}
-	node_modules/.bin/plop {{ project_id }}
+generate-{{ component_name }}: clean-{{ component_name }}
+	node_modules/.bin/plop {{ component_name }}
 
-test-{{ project_id }}:
-	node_modules/.bin/plop {{ project_id }} -- \
+test-{{ component_name }}:
+	node_modules/.bin/plop {{ component_name }} -- \
 	    --project_id "{{ project_id }}" \
 		--project_name "{{ project_name }}" \
 		--project_desc "{{ project_desc }}" \
@@ -24,7 +24,7 @@ test-{{ project_id }}:
 		--author_email "{{ author_email }}" \
 		--github_id "{{ github_id }}" \
 		--github_repo "{{ github_repo }}"
-	cd stage/{{ project_id }}/ && \
+	cd stage/{{ component_name }}/ && \
 	  make ci
 
-.PHONY: ci clean clean-{{ project_id }} stage deps generate-{{ project_id }} test-{{ project_id }}
+.PHONY: ci clean clean-{{ component_name }} stage deps generate-{{ component_name }} test-{{ component_name }}
