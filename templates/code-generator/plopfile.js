@@ -12,8 +12,12 @@ export default function (plop) {
     return text.charAt(0).toUpperCase() + text.slice(1);
   });
 
-  plop.setGenerator('some-component', {
-      description: 'SomeComponent Plop',
+  plop.setHelper('uppercase', function (text) {
+    return text.toUpperCase();
+  });
+
+  plop.setGenerator('{{ project_id }}', {
+      description: '{{ titlecase(project_id) }} Plop',
       prompts: [
         {
           type: 'input',

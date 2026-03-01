@@ -1,10 +1,10 @@
 {
   "resources": [
     {
-      "path": "config/meta-extra.yml",
-      "type": "yaml",
+      "path": "Makefile",
+      "type": "makefile",
       "params": {
-        "property": "version"
+        "variable": "version"
       }
     },
     {

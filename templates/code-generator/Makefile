@@ -1,10 +1,10 @@
-ci: clean stage deps test-some-component
+ci: clean stage deps test-{{ project_id }}
 
 clean:
 	rm -rf stage/
 
-clean-some-component:
-	rm -rf stage/some-component/
+clean-{{ project_id }}:
+	rm -rf stage/{{ project_id }}/
 
 stage:
 	mkdir -p stage/
@@ -12,19 +12,19 @@ stage:
 deps:
 	npm install .
 
-generate-some-component: clean-some-component
-	node_modules/.bin/plop some-component
+generate-{{ project_id }}: clean-{{ project_id }}
+	node_modules/.bin/plop {{ project_id }}
 
-test-some-component:
-	node_modules/.bin/plop some-component -- \
-	    --project_id "some-component" \
-		--project_name "Some Component" \
-		--project_desc "A sample component project" \
-		--author_name "Pakkun" \
-		--author_email "blah+pakkun@cliffano.com" \
-		--github_id "pakkunbot" \
-		--github_repo "some-component"
-	cd stage/some-component/ && \
+test-{{ project_id }}:
+	node_modules/.bin/plop {{ project_id }} -- \
+	    --project_id "{{ project_id }}" \
+		--project_name "{{ project_name }}" \
+		--project_desc "{{ project_desc }}" \
+		--author_name "{{ author_name }}" \
+		--author_email "{{ author_email }}" \
+		--github_id "{{ github_id }}" \
+		--github_repo "{{ github_repo }}"
+	cd stage/{{ project_id }}/ && \
 	  make ci
 
-.PHONY: ci clean clean-some-component stage deps generate-some-component test-some-component
+.PHONY: ci clean clean-{{ project_id }} stage deps generate-{{ project_id }} test-{{ project_id }}

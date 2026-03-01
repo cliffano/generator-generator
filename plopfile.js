@@ -16,6 +16,10 @@ export default function (plop) {
     return text.charAt(0).toUpperCase() + text.slice(1);
   });
 
+  plop.setHelper('uppercase', function (text) {
+    return text.toUpperCase();
+  });
+
   plop.setGenerator('code-generator', {
       description: 'Code Generator Plop',
       prompts: [
