@@ -17,7 +17,7 @@ export default function (plop) {
   });
 
   plop.setGenerator('{{ component_name }}', {
-    description: '{{ titlecase(component_name) }} Plop',
+    description: '{{ titlecase component_name }} Plop',
     prompts: [
       {
         type: 'input',
@@ -60,10 +60,10 @@ export default function (plop) {
         type: 'addMany',
         destination: 'stage',
         templateFiles: [
-          'templates/<some_component>/.*/*/*/*',
-          'templates/<some_component>/.*/*/*',
-          'templates/<some_component>/**/.*',
-          'templates/<some_component>/**/*'
+          'templates/{{ component_name }}/.*/*/*/*',
+          'templates/{{ component_name }}/.*/*/*',
+          'templates/{{ component_name }}/**/.*',
+          'templates/{{ component_name }}/**/*'
         ]
       }
     ]

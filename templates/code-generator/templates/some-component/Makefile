@@ -4,7 +4,7 @@
 ################################################################
 
 # \{{ project_name }}'s version number
-\{{ uppercase(project_id) }}_VERSION = 2.0.0
+\{{ uppercase project_id }}_VERSION = 2.0.0
 
 $(info ################################################################)
 $(info Building Ansible role using Makefile:)
@@ -46,15 +46,15 @@ lint:
 	$(call python_venv,yamllint .)
 
 # Update Makefile to the latest version tag
-update-to-latest: TARGET_\{{ uppercase(project_id) }}_VERSION = $(shell curl -s https://api.github.com/repos/\{{ github_id }}/\{{ github_repo }}/tags | jq -r '.[0].name')
+update-to-latest: TARGET_\{{ uppercase project_id }}_VERSION = $(shell curl -s https://api.github.com/repos/\{{ github_id }}/\{{ github_repo }}/tags | jq -r '.[0].name')
 update-to-latest: update-to-version
 
 # Update Makefile to the main branch
 update-to-main:
 	curl https://raw.githubusercontent.com/\{{ github_id }}/\{{ github_repo }}/main/src/Makefile-\{{ project_id }} -o Makefile
 
-# Update Makefile to the version defined in TARGET_\{{ uppercase(project_id) }}_VERSION parameter
+# Update Makefile to the version defined in TARGET_\{{ uppercase project_id }}_VERSION parameter
 update-to-version:
-	curl https://raw.githubusercontent.com/\{{ github_id }}/\{{ github_repo }}/$(TARGET_\{{ uppercase(project_id) }}_VERSION)/src/Makefile-\{{ project_id }} -o Makefile
+	curl https://raw.githubusercontent.com/\{{ github_id }}/\{{ github_repo }}/$(TARGET_\{{ uppercase project_id }}_VERSION)/src/Makefile-\{{ project_id }} -o Makefile
 
 .PHONY: ci all clean rmdeps deps deps-upgrade lint test update-to-latest update-to-main update-to-version stage x-test-fixtures
