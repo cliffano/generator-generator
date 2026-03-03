@@ -7,7 +7,7 @@
 \{{ uppercase project_id }}_VERSION = 2.0.0
 
 $(info ################################################################)
-$(info Building Ansible role using Makefile:)
+$(info Building TODO using Makefile:)
 
 define python_venv
 	. .venv/bin/activate && $(1)

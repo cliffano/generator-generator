@@ -17,15 +17,15 @@ generate-code-generator: clean-code-generator
 
 test-code-generator:
 	node_modules/.bin/plop code-generator -- \
-	    --project_id "code-generator" \
-		--project_name "Code Generator" \
-		--project_desc "Simple Code Generator" \
-		--component_name "some-component" \
-		--author_name "Pakkun" \
-		--author_email "blah+pakkun@cliffano.com" \
-		--author_url "https://github.com/pakkunbot" \
-		--github_id "pakkunbot" \
-		--github_repo "generator-code-generator"
+	    --project_id "generator-makefile" \
+		--project_name "Generator-Makefile" \
+		--project_desc "Makefile projects generator" \
+		--component_name "makefile" \
+		--author_name "Cliffano Subagio" \
+		--author_email "cliffano@gmail.com" \
+		--author_url "https://github.com/cliffano" \
+		--github_id "cliffano" \
+		--github_repo "generator-makefile"
 	cd stage/code-generator/ && \
 	  make ci
 

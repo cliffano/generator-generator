@@ -4,8 +4,8 @@
 [![Security Status](https://snyk.io/test/github/{{ github_id }}/{{ github_repo }}/badge.svg)](https://snyk.io/test/github/{{ github_id }}/{{ github_repo }})
 <br/>
 
-Code Generator
---------------
+{{ project_name }}
+\{{underline "-" project_name.length}}
 
 {{ project_name }} is {{ project_desc }}.
 
@@ -20,7 +20,7 @@ Usage
 
 Generate code generator project:
 
-    make generate-{{ project_id }}
+    make generate-{{ component_name }}
 
 This component will prompt you the following inputs:
 
