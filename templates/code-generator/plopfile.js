@@ -16,8 +16,8 @@ export default function (plop) {
     return text.toUpperCase();
   });
 
-  plop.setGenerator('{{ component_name }}', {
-    description: '{{ titlecase component_name }} Plop',
+  plop.setGenerator('{{component_name}}', {
+    description: '{{titlecase component_name}} Plop',
     prompts: [
       {
         type: 'input',
@@ -60,10 +60,10 @@ export default function (plop) {
         type: 'addMany',
         destination: 'stage',
         templateFiles: [
-          'templates/{{ component_name }}/.*/*/*/*',
-          'templates/{{ component_name }}/.*/*/*',
-          'templates/{{ component_name }}/**/.*',
-          'templates/{{ component_name }}/**/*'
+          'templates/{{component_name}}/.*/*/*/*',
+          'templates/{{component_name}}/.*/*/*',
+          'templates/{{component_name}}/**/.*',
+          'templates/{{component_name}}/**/*'
         ]
       }
     ]
