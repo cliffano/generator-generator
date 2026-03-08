@@ -4,7 +4,7 @@
 ################################################################
 
 # \{{project_name}}'s version number
-\{{uppercase project_id}}_VERSION = 2.0.0
+\{{prefixConst project_id}}_VERSION = 2.0.0
 
 $(info ################################################################)
 $(info Building TODO using Makefile:)

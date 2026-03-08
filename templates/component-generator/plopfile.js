@@ -16,6 +16,10 @@ export default function (plop) {
     return text.toUpperCase();
   });
 
+  plop.setHelper('prefixConst', function (text) {
+    return text.toUpperCase().replace(/\s+/g, '').replace(/[^A-Z]/g, '_');
+  });
+
   plop.setGenerator('{{component_name}}', {
     description: '{{titlecase component_name}} Plop',
     prompts: [

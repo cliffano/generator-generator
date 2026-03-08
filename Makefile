@@ -20,7 +20,7 @@ test-component-generator:
 	    --project_id "generator-component" \
 		--project_name "Generator-Component" \
 		--project_desc "Component projects generator" \
-		--component_name "component" \
+		--component_name "some-component" \
 		--author_name "Cliffano Subagio" \
 		--author_email "cliffano@gmail.com" \
 		--author_url "https://github.com/cliffano" \
