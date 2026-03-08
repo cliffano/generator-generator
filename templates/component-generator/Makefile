@@ -17,9 +17,9 @@ generate-{{component_name}}: clean-{{component_name}}
 
 test-{{component_name}}:
 	node_modules/.bin/plop {{component_name}} -- \
-	    --project_id "TODO {{component_name}} project ID" \
-		--project_name "TODO {{component_name}} project name" \
-		--project_desc "TODO {{component_name}} project description" \
+	    --project_id "{{component_name}} project ID" \
+		--project_name "{{component_name}} project name" \
+		--project_desc "{{component_name}} project description" \
 		--author_name "{{author_name}}" \
 		--author_email "{{author_email}}" \
 		--github_id "{{github_id}}" \
