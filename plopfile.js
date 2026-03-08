@@ -20,7 +20,7 @@ export default function (plop) {
     return text.toUpperCase();
   });
 
-  plop.setGenerator('code-generator', {
+  plop.setGenerator('component-generator', {
     description: 'Code Generator Plop',
     prompts: [
       {
@@ -74,10 +74,10 @@ export default function (plop) {
         type: 'addMany',
         destination: 'stage',
         templateFiles: [
-          'templates/code-generator/.*/*/*/*',
-          'templates/code-generator/.*/*/*',
-          'templates/code-generator/**/.*',
-          'templates/code-generator/**/*'
+          'templates/component-generator/.*/*/*/*',
+          'templates/component-generator/.*/*/*',
+          'templates/component-generator/**/.*',
+          'templates/component-generator/**/*'
         ]
       }
     ]

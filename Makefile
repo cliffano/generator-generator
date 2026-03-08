@@ -1,4 +1,4 @@
-ci: clean stage deps test-code-generator
+ci: clean stage deps test-component-generator
 
 clean:
 	rm -rf stage/
@@ -9,24 +9,24 @@ stage:
 deps:
 	npm install .
 
-clean-code-generator:
-	rm -rf stage/code-generator/
+clean-component-generator:
+	rm -rf stage/component-generator/
 
-generate-code-generator: clean-code-generator
-	node_modules/.bin/plop code-generator
+generate-component-generator: clean-component-generator
+	node_modules/.bin/plop component-generator
 
-test-code-generator:
-	node_modules/.bin/plop code-generator -- \
-	    --project_id "generator-makefile" \
-		--project_name "Generator-Makefile" \
-		--project_desc "Makefile projects generator" \
-		--component_name "makefile" \
+test-component-generator:
+	node_modules/.bin/plop component-generator -- \
+	    --project_id "generator-component" \
+		--project_name "Generator-Component" \
+		--project_desc "Component projects generator" \
+		--component_name "component" \
 		--author_name "Cliffano Subagio" \
 		--author_email "cliffano@gmail.com" \
 		--author_url "https://github.com/cliffano" \
 		--github_id "cliffano" \
-		--github_repo "generator-makefile"
-	cd stage/code-generator/ && \
+		--github_repo "generator-component"
+	cd stage/component-generator/ && \
 	  make ci
 
-.PHONY: ci clean clean-code-generator stage deps generate-code-generator generate-oag-url-spec test-code-generator
+.PHONY: ci clean clean-component-generator stage deps generate-component-generator generate-oag-url-spec test-component-generator

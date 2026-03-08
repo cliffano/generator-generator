@@ -13,14 +13,14 @@ It provides the following component:
 
 | Component | Description |
 |-----------|-------------|
-| code-generator | Generate a generator project to generate more code. |
+| component-generator | Generate a generator project to generate more code. |
 
 Usage
 -----
 
 Generate code generator project:
 
-    make generate-code-generator
+    make generate-component-generator
 
 This component will prompt you the following inputs:
 
