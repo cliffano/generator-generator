@@ -1,6 +1,7 @@
-<img align="right" src="https://raw.github.com/{{github_id}}/{{github_repo}}/main/avatar.jpg" alt="Avatar"/>
+![Avatar](avatar.jpg)
 
 [![Build Status](https://github.com/{{github_id}}/{{github_repo}}/workflows/CI/badge.svg)](https://github.com/{{github_id}}/{{github_repo}}/actions?query=workflow%3ACI)
+[![Code Scanning Status](https://github.com/{{github_id}}/{{github_repo}}/workflows/CodeQL/badge.svg)](https://github.com/{{github_id}}/{{github_repo}}/actions?query=workflow%3ACodeQL)
 [![Security Status](https://snyk.io/test/github/{{github_id}}/{{github_repo}}/badge.svg)](https://snyk.io/test/github/{{github_id}}/{{github_repo}})
 <br/>
 
@@ -14,6 +15,7 @@ It provides the following components:
 | Component | Description |
 |-----------|-------------|
 | {{component_name}} | <some_component_desc> |
+| {{component_name}}-partials | Generate README partial snippets for {{titlecase component_name}} projects. |
 
 Usage
 -----
@@ -22,6 +24,12 @@ Generate code generator project:
 
 ```shell
 make generate-{{component_name}}
+```
+
+Generate {{titlecase component_name}} partial snippets:
+
+```shell
+make generate-{{component_name}}-partials
 ```
 
 This component will prompt you the following inputs:
@@ -35,11 +43,25 @@ This component will prompt you the following inputs:
 | Author Email | The email of the project author. |
 | Author URL | The author's website URL. |
 | GitHub ID | The GitHub ID of the project repo. |
+| GitHub Repository | The GitHub repository name. |
+| GitHub Actions token prefix | Prefix for the GitHub token secret used in GitHub Actions workflows. |
 
 Move to the generated project directory:
 
 ```shell
 cd stage/{{component_name}}/
+```
+
+Usage With Config File
+-----------------------
+
+Each component also has a `-with-config` target that skips the interactive prompts by reading the inputs from a YAML config file. See [examples/](examples/) for sample config files for each component.
+
+Pass the config file path via the `GENERATOR_CONFIG` variable, it defaults to `{{component_name}}.yml`:
+
+```shell
+make generate-{{component_name}}-with-config GENERATOR_CONFIG=path/to/{{component_name}}.yml
+make generate-{{component_name}}-partials-with-config GENERATOR_CONFIG=path/to/{{component_name}}.yml
 ```
 
 Configuration

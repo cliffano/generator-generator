@@ -1,5 +1,5 @@
 <!-- BEGIN:AVATAR -->
-<img align="right" src="https://raw.github.com/cliffano/generator-generator/main/avatar.jpg" alt="Avatar"/>
+![Avatar](avatar.jpg)
 <!-- END:AVATAR -->
 
 <!-- BEGIN:BADGES -->
@@ -33,15 +33,28 @@ This component will prompt you the following inputs:
 | Project ID | Used for package names and project repo name. |
 | Project Name | Used in documentation or comments. |
 | Project Description | Used in documentation or comments. |
+| Component Name | Used as the name of the first Plop component in the generated generator. |
 | Author Name | The name of the project author. |
 | Author Email | The email of the project author. |
 | Author URL | The author's website URL. |
 | GitHub ID | The GitHub ID of the project repo. |
+| GitHub Repository | The GitHub repository name. |
+| GitHub Actions token prefix | Prefix for the GitHub token secret used in GitHub Actions workflows. |
 
 Move to the generated project directory:
 
 ```shell
 cd stage/<component>/
+```
+
+## Usage With Config File
+
+The component also has a `-with-config` target that skips the interactive prompts by reading the inputs from a Generatoo YAML config file. See [examples/](examples/) for a sample config file.
+
+Pass the config file path via the `GENERATOR_CONFIG` variable, it defaults to `generatoo.yml`:
+
+```shell
+make generate-component-generator-with-config GENERATOR_CONFIG=path/to/generatoo.yml
 ```
 
 ## Colophon

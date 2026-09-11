@@ -20,45 +20,57 @@ export default function (plop) {
     return text.toUpperCase().replace(/\s+/g, '').replace(/[^A-Z]/g, '_');
   });
 
+  const prompts = [
+    {
+      type: 'input',
+      name: 'project_id',
+      message: 'Project ID'
+    },
+    {
+      type: 'input',
+      name: 'project_name',
+      message: 'Project Name'
+    },
+    {
+      type: 'input',
+      name: 'project_desc',
+      message: 'Project Description '
+    },
+    {
+      type: 'input',
+      name: 'author_name',
+      message: 'Author Name'
+    },
+    {
+      type: 'input',
+      name: 'author_email',
+      message: 'Author Email'
+    },
+    {
+      type: 'input',
+      name: 'author_url',
+      message: 'Author URL'
+    },
+    {
+      type: 'input',
+      name: 'github_id',
+      message: 'GitHub ID'
+    },
+    {
+      type: 'input',
+      name: 'github_repo',
+      message: 'GitHub Repository'
+    },
+    {
+      type: 'input',
+      name: 'github_token_prefix',
+      message: 'GitHub Actions token prefix'
+    }
+  ];
+
   plop.setGenerator('{{component_name}}', {
     description: '{{titlecase component_name}} Plop',
-    prompts: [
-      {
-        type: 'input',
-        name: 'project_id',
-        message: 'Project ID'
-      },
-      {
-        type: 'input',
-        name: 'project_name',
-        message: 'Project Name'
-      },
-      {
-        type: 'input',
-        name: 'project_desc',
-        message: 'Project Description '
-      },
-      {
-        type: 'input',
-        name: 'author_name',
-        message: 'Author Name'
-      },
-      {
-        type: 'input',
-        name: 'author_email',
-        message: 'Author Email'
-      },
-      {
-        type: 'input',
-        name: 'github_id',
-        message: 'GitHub ID'
-      },
-      {
-        type: 'input',
-        name: 'github_repo',
-        message: 'GitHub Repository'
-      }
-    ],
+    prompts: prompts,
     actions: [
       {
         type: 'addMany',
@@ -69,6 +81,21 @@ export default function (plop) {
           'templates/{{component_name}}/**/.*',
           'templates/{{component_name}}/**/*'
         ]
+      }
+    ]
+  });
+
+  plop.setGenerator('{{component_name}}-partials', {
+    description: '{{titlecase component_name}} partials template',
+    prompts: prompts,
+    actions: [
+      {
+        type: 'addMany',
+        destination: 'stage/{{component_name}}-partials',
+        templateFiles: [
+          'templates/{{component_name}}-partials/*'
+        ],
+        base: 'templates/{{component_name}}-partials'
       }
     ]
   });
