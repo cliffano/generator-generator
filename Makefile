@@ -25,7 +25,8 @@ test-component-generator:
 		--author_email "cliffano@gmail.com" \
 		--author_url "https://github.com/cliffano" \
 		--github_id "cliffano" \
-		--github_repo "generator-component"
+		--github_repo "generator-component" \
+		--github_token_prefix "STUDIO"
 	cd stage/component-generator/ && \
 	  make ci
 

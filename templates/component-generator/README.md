@@ -20,7 +20,9 @@ Usage
 
 Generate code generator project:
 
-    make generate-{{component_name}}
+```shell
+make generate-{{component_name}}
+```
 
 This component will prompt you the following inputs:
 
@@ -36,7 +38,9 @@ This component will prompt you the following inputs:
 
 Move to the generated project directory:
 
-    cd stage/{{component_name}}/
+```shell
+cd stage/{{component_name}}/
+```
 
 Configuration
 -------------

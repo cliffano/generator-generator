@@ -1,11 +1,14 @@
+<!-- BEGIN:AVATAR -->
 <img align="right" src="https://raw.github.com/cliffano/generator-generator/main/avatar.jpg" alt="Avatar"/>
+<!-- END:AVATAR -->
 
+<!-- BEGIN:BADGES -->
 [![Build Status](https://github.com/cliffano/generator-generator/workflows/CI/badge.svg)](https://github.com/cliffano/generator-generator/actions?query=workflow%3ACI)
 [![Code Scanning Status](https://github.com/cliffano/generator-generator/workflows/CodeQL/badge.svg)](https://github.com/cliffano/generator-generator/actions?query=workflow%3ACodeQL)
 [![Security Status](https://snyk.io/test/github/cliffano/generator-generator/badge.svg)](https://snyk.io/test/github/cliffano/generator-generator)
+<!-- END:BADGES -->
 
-Generator-Generator
--------------------
+# Generator-Generator
 
 The Generator that generates generators using [Plop](https://plopjs.com/).
 
@@ -15,12 +18,13 @@ It provides the following component:
 |-----------|-------------|
 | component-generator | Generate a generator project to generate more code. |
 
-Usage
------
+## Usage
 
 Generate code generator project:
 
-    make generate-component-generator
+```shell
+make generate-component-generator
+```
 
 This component will prompt you the following inputs:
 
@@ -36,4 +40,17 @@ This component will prompt you the following inputs:
 
 Move to the generated project directory:
 
-    cd stage/<component>/
+```shell
+cd stage/<component>/
+```
+
+## Colophon
+
+<!-- BEGIN:DEVELOPERS_GUIDE -->
+[Developer's Guide](https://cliffano.github.io/developers-guide-makefile.html)
+<!-- END:DEVELOPERS_GUIDE -->
+
+<!-- BEGIN:BUILD_REPORTS -->
+Build reports:
+
+<!-- END:BUILD_REPORTS -->
