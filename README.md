@@ -10,7 +10,7 @@
 
 # Generator-Generator
 
-The Generator that generates generators using [Plop](https://plopjs.com/).
+Generator-Generator is a code generator for code generators.
 
 It provides the following component:
 
